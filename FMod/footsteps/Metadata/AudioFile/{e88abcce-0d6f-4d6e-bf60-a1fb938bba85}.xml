@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e88abcce-0d6f-4d6e-bf60-a1fb938bba85}">
+		<property name="assetPath">
+			<value>SF-run_sand0.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.44433106575963721</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{106a5302-0d4a-4125-be41-9b59db1bc729}</destination>
+		</relationship>
+	</object>
+</objects>
