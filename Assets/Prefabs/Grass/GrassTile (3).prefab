@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2516706718399207655}
   - component: {fileID: 4908638178120826934}
   - component: {fileID: 3633756368365573536}
+  - component: {fileID: 7557146239187652203}
   m_Layer: 0
   m_Name: GrassTile (3)
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,3 +106,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7557146239187652203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2335722733205965827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f7d8cd4328cc941a5cd2bc639b3381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assets:
+  - assetName: CUBO
+    asset: {fileID: 6766575391806214850, guid: 8022c5eb110681146a09c46d76309452, type: 3}
+    probabilityToSpawn: 5
+  probabilityToSpawnNothing: 95
