@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7078994230320211662}
   - component: {fileID: 1240182219254601114}
   - component: {fileID: 6071526381808175491}
+  - component: {fileID: 3073877328538230022}
   m_Layer: 0
   m_Name: RocksGrayTile (1)
   m_TagString: Untagged
@@ -105,3 +106,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3073877328538230022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599997696843819431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f7d8cd4328cc941a5cd2bc639b3381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assets:
+  - assetName: 
+    asset: {fileID: 7857723176079672709, guid: a7154e4dc0d8afd4aa6a72c238a51226, type: 3}
+    probabilityToSpawn: 3
+  - assetName: 
+    asset: {fileID: 9174778942950148459, guid: 43fde705e20cd1345939298228d0131f, type: 3}
+    probabilityToSpawn: 2
+  probabilityToSpawnNothing: 95

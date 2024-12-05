@@ -3,37 +3,44 @@ using UnityEngine;
 public class SpawnOnObject : MonoBehaviour
 {
     [System.Serializable]
-    public class assetsToSpawn
+    public class AssetsToSpawn
     {
         [Tooltip("Name of your asset")]
         public string assetName;
         public GameObject asset;
-        [Tooltip("probability to spawn it")]
+        [Tooltip("Probability to spawn it")]
         public int probabilityToSpawn;
     }
 
-    public assetsToSpawn[] assets;
+    public AssetsToSpawn[] assets;
     [Tooltip("Probability to spawn nothing")]
     public int probabilityToSpawnNothing;
 
     void Start()
     {
-        // Asset auswählen
+        // Select an asset
         GameObject selectedAsset = SelectRandomAsset();
 
-        // Wenn ein Asset ausgewählt wurde, spawnen
+        // If an asset is selected, spawn it
         if (selectedAsset != null)
         {
-            // Zufällige Position auf dem Tile spawnen
             Vector3 spawnPosition = GetRandomSpawnPosition();
-            Instantiate(selectedAsset, spawnPosition, Quaternion.identity, transform);
-        }
+
+            // Create random rotation with random Y-axis
+            Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+
+            // Instantiate without inheriting the parent's scale
+            GameObject instance = Instantiate(selectedAsset, spawnPosition, randomRotation);
+
+            // Reset parent to prevent scale inheritance
+            instance.transform.SetParent(null, true);
+            }
     }
 
     GameObject SelectRandomAsset()
     {
         int totalProbability = probabilityToSpawnNothing;
-        foreach (assetsToSpawn asset in assets)
+        foreach (AssetsToSpawn asset in assets)
         {
             totalProbability += asset.probabilityToSpawn;
         }
@@ -48,7 +55,7 @@ public class SpawnOnObject : MonoBehaviour
 
         cumulativeProbability += probabilityToSpawnNothing;
 
-        foreach (assetsToSpawn asset in assets)
+        foreach (AssetsToSpawn asset in assets)
         {
             cumulativeProbability += asset.probabilityToSpawn;
             if (randomValue < cumulativeProbability)
@@ -57,7 +64,7 @@ public class SpawnOnObject : MonoBehaviour
             }
         }
 
-        // Falls nichts ausgewählt wurde (was unwahrscheinlich ist), das erste Asset zurückgeben
+        // If no asset is selected (unlikely), return the first asset
         return assets[0].asset;
     }
 

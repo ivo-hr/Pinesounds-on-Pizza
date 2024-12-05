@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4241016772487761878}
   - component: {fileID: 5805781271786332056}
   - component: {fileID: 1025665129240788718}
+  - component: {fileID: -2180668445042321650}
   m_Layer: 0
   m_Name: SandTile (3)
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.15, z: 1}
+  m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15d48e6c7542e1c47b394872e06292b1, type: 2}
+  - {fileID: 2100000, guid: 1689e8e0b393a4349918bc4430f068ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,3 +106,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2180668445042321650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760523877893572251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f7d8cd4328cc941a5cd2bc639b3381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assets:
+  - assetName: 
+    asset: {fileID: 9174778942950148459, guid: 43fde705e20cd1345939298228d0131f, type: 3}
+    probabilityToSpawn: 1
+  - assetName: 
+    asset: {fileID: 6200491160025657898, guid: db68c3d6287c9d84088fddd0e8634589, type: 3}
+    probabilityToSpawn: 2
+  - assetName: 
+    asset: {fileID: 1672193872729845326, guid: 5744b0cb19e74f14484a2aafcb348017, type: 3}
+    probabilityToSpawn: 1
+  - assetName: 
+    asset: {fileID: 3181916495347918271, guid: 169c38d25d3617641b3391b33e47259a, type: 3}
+    probabilityToSpawn: 1
+  probabilityToSpawnNothing: 95

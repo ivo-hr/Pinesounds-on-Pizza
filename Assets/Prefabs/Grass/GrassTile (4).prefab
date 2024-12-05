@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e41dbaf3a31169f4896b40d98780674a, type: 2}
+  - {fileID: 2100000, guid: c392b5e9518aaec419e72c553dd48c1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,7 +119,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets:
-  - assetName: CUBO
-    asset: {fileID: 6766575391806214850, guid: 8022c5eb110681146a09c46d76309452, type: 3}
+  - assetName: Muskrat
+    asset: {fileID: 4950779065795438720, guid: 8cb75dc2fdd63734988b8358f1314d25, type: 3}
+    probabilityToSpawn: 1
+  - assetName: Tree
+    asset: {fileID: 6200491160025657898, guid: db68c3d6287c9d84088fddd0e8634589, type: 3}
     probabilityToSpawn: 5
-  probabilityToSpawnNothing: 95
+  - assetName: Plant
+    asset: {fileID: 9174778942950148459, guid: 43fde705e20cd1345939298228d0131f, type: 3}
+    probabilityToSpawn: 8
+  probabilityToSpawnNothing: 86
