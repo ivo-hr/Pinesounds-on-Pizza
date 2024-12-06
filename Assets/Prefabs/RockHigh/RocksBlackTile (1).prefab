@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3204885879173202082}
   - component: {fileID: 2762561521247638840}
   - component: {fileID: 6760289250199783135}
+  - component: {fileID: 2391609575087169615}
   m_Layer: 0
   m_Name: RocksBlackTile (1)
   m_TagString: Untagged
@@ -123,3 +124,15 @@ MonoBehaviour:
     asset: {fileID: 7857723176079672709, guid: a7154e4dc0d8afd4aa6a72c238a51226, type: 3}
     probabilityToSpawn: 5
   probabilityToSpawnNothing: 95
+--- !u!114 &2391609575087169615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524140227818239230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5ad7982b248264094413890a5e33ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

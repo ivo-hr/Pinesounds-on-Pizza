@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1240182219254601114}
   - component: {fileID: 6071526381808175491}
   - component: {fileID: 3073877328538230022}
+  - component: {fileID: 472328511715367973}
   m_Layer: 0
   m_Name: RocksGrayTile (1)
   m_TagString: Untagged
@@ -126,3 +127,15 @@ MonoBehaviour:
     asset: {fileID: 9174778942950148459, guid: 43fde705e20cd1345939298228d0131f, type: 3}
     probabilityToSpawn: 2
   probabilityToSpawnNothing: 95
+--- !u!114 &472328511715367973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599997696843819431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5ad7982b248264094413890a5e33ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
