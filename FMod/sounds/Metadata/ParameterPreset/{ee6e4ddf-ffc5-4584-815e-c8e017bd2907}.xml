@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ee6e4ddf-ffc5-4584-815e-c8e017bd2907}">
+		<property name="name">
+			<value>shorelineDistance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8dc6633d-a1ba-4f12-9168-631a144f0785}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8dc6633d-a1ba-4f12-9168-631a144f0785}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

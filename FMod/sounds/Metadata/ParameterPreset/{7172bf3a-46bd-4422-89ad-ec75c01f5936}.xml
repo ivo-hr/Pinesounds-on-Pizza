@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7172bf3a-46bd-4422-89ad-ec75c01f5936}">
+		<property name="name">
+			<value>grassDirection</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{55fdeb4f-1ed0-43db-8063-74d3de1643f2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{55fdeb4f-1ed0-43db-8063-74d3de1643f2}">
+		<property name="maximum">
+			<value>360</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

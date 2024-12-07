@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{deac188e-d9d4-4fd0-b6aa-cf2bb0819aec}">
+		<property name="name">
+			<value>shorelineDirection</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{be08eba3-4456-4ca9-a5fa-00edec436c2f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{be08eba3-4456-4ca9-a5fa-00edec436c2f}">
+		<property name="maximum">
+			<value>360</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

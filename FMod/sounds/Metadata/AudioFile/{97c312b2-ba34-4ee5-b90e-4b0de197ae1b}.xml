@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{97c312b2-ba34-4ee5-b90e-4b0de197ae1b}">
+		<property name="assetPath">
+			<value>monki0.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.4889795918367348</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{106a5302-0d4a-4125-be41-9b59db1bc729}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ef2b2dd1-918f-4b05-8c63-0bed223508ff}">
+		<property name="name">
+			<value>shorelineVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a77ac736-f70d-48e5-97f7-c5601b68d3c0}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a77ac736-f70d-48e5-97f7-c5601b68d3c0}">
+		<property name="maximum">
+			<value>110</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

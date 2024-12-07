@@ -122,6 +122,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &289095552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773623360729482, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+  m_PrefabInstance: {fileID: 1307805538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &289095558 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4207293392497186, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+  m_PrefabInstance: {fileID: 1307805538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &289095559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289095552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d469814c692a6da4aaa41166739047b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaSound:
+    Guid:
+      Data1: 524444130
+      Data2: 1217725897
+      Data3: 170059184
+      Data4: -195124865
+    Path: event:/background
+  stepSound:
+    Guid:
+      Data1: 1731932443
+      Data2: 1218722603
+      Data3: 481293965
+      Data4: -851095130
+    Path: event:/Footsteps
+  player: {fileID: 289095558}
+  groundCheck: {fileID: 1020848299}
+  maxDistance: 100
+  occlusionThreshold: 0.5
+  occlusionIntensity: 0.5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -234,14 +278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -308,6 +344,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
+--- !u!114 &1020848299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114503055206606986, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+  m_PrefabInstance: {fileID: 1307805538}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084c01ab381b9da4082c1f84cf70751b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1307805538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364,18 +425,43 @@ PrefabInstance:
       propertyPath: field of view
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 81448068208000304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114497868231759342, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: jumpStrength
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497868231759342, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: autoJumpDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114497868231759342, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: autoJumpStrength
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114963311885979670, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 114963311885979670, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: canRun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959843393412544119, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+    m_RemovedGameObjects:
+    - {fileID: 687180947, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1773623360729482, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 289095559}
   m_SourcePrefab: {fileID: 100100000, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
 --- !u!1 &1820813675
 GameObject:

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7151582149537588491}
   - component: {fileID: 3865887132226373172}
   - component: {fileID: -1778374823882403988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RocksGrayTile (3)
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

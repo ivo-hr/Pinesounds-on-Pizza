@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{737bf14e-2872-47a4-abb0-fdc9e9199c02}">
+		<property name="name">
+			<value>windDirection</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3541ddb6-79d1-4378-925e-f85795663578}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3541ddb6-79d1-4378-925e-f85795663578}">
+		<property name="maximum">
+			<value>360</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

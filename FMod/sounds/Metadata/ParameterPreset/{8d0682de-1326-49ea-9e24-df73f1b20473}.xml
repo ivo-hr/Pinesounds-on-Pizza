@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8d0682de-1326-49ea-9e24-df73f1b20473}">
+		<property name="name">
+			<value>grassVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{84f45f15-c824-4e78-909a-beb2ca7557cd}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{84f45f15-c824-4e78-909a-beb2ca7557cd}">
+		<property name="maximum">
+			<value>110</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

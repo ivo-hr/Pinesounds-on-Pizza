@@ -4,6 +4,9 @@ public class Jump : MonoBehaviour
 {
     Rigidbody rigidbody;
     public float jumpStrength = 2;
+    public bool autoJump = true;
+    public float autoJumpStrength = 1;
+    public float autoJumpDistance = 2;
     public event System.Action Jumped;
 
     [SerializeField, Tooltip("Prevents jumping when the transform is in mid-air.")]
@@ -11,6 +14,7 @@ public class Jump : MonoBehaviour
 
     private int jumpCount = 0;  // Contador de saltos
 
+    private int terrainLayer;
     void Reset()
     {
         // Try to get groundCheck.
@@ -21,6 +25,8 @@ public class Jump : MonoBehaviour
     {
         // Get rigidbody.
         rigidbody = GetComponent<Rigidbody>();
+
+        terrainLayer = LayerMask.GetMask("Terrain");
     }
 
     void LateUpdate()
@@ -42,4 +48,27 @@ public class Jump : MonoBehaviour
             }
         }
     }
+
+
+    void AutoJump()
+    {
+        // Si el jugador no está en el suelo y el salto automático está activado
+        if (!groundCheck.isGrounded && autoJump)
+        {
+            //Mandar dos rayos hacia delante para ver si hay un obstáculo
+            //Uno a la altura de los pies y otro desde el centro del jugador
+            RaycastHit feet;
+            RaycastHit center;
+            if (Physics.Raycast((transform.position - Vector3.down * 3), Vector3.forward, out feet, autoJumpDistance, terrainLayer) && 
+                !Physics.Raycast(transform.position, Vector3.forward, out center, autoJumpDistance, terrainLayer) &&
+                groundCheck && groundCheck.isGrounded)
+            {
+                // Si no hay obstáculo, saltar
+                rigidbody.AddForce(Vector3.up * 100 * autoJumpStrength);
+                Jumped?.Invoke();
+
+            }
+        }
+    }
+
 }
