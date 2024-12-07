@@ -55,7 +55,7 @@ public class AreaDetector : MonoBehaviour
         {
             Debug.Log(hit.collider.tag);
             // Check if the player is standing on a terrain
-           switch (hit.collider.tag)
+            switch (hit.collider.tag)
             {
                 case "Grass":
                     stepInstance.setParameterByName("Surface", 1);
@@ -63,6 +63,11 @@ public class AreaDetector : MonoBehaviour
                     break;
 
                 case "Rock":
+                    stepInstance.setParameterByName("Surface", 3);
+                    
+                    break;
+
+                case "RockFloor":
                     stepInstance.setParameterByName("Surface", 3);
                     
                     break;
@@ -96,6 +101,9 @@ public class AreaDetector : MonoBehaviour
             //play the step sound
             attributes = RuntimeUtils.To3DAttributes(player.position);
             stepInstance.set3DAttributes(attributes);
+            AdjustEcho();
+
+
 
             if (!ismoving) {
                 ismoving = true;
@@ -108,6 +116,58 @@ public class AreaDetector : MonoBehaviour
             {
                 stepInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ismoving = false;
+            }
+        }
+    }
+    void AdjustEcho()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(player.position, Vector3.down, out hit, maxDistance, terrainLayer))
+        {
+            if (hit.collider.tag == "RockFloor")
+            { 
+
+                LayerMask obstacleLayer;
+                obstacleLayer = LayerMask.GetMask("Terrain");
+                Collider[] nearbyWalls = Physics.OverlapSphere(player.position, maxDistance, obstacleLayer);                    
+                float occlusionLevel = 0f;
+                float reverbLevel = 0f;
+
+                foreach (Collider wall in nearbyWalls)
+                {
+                    // Verificar si el objeto tiene el componente AddGeometry (solo rocas o superficies relevantes)
+                    AddGeometry geometry = wall.GetComponent<AddGeometry>();
+                    if (geometry != null)
+                    {
+                        // Calcular la distancia del jugador al punto más cercano de cada pared
+                        float distance = Vector3.Distance(player.position, wall.ClosestPoint(player.position));
+            
+                        // Ajustar el nivel de reverb dependiendo de la proximidad de la superficie (entre 0 y 1)
+                        reverbLevel += Mathf.Clamp01(1 - (distance / maxDistance));
+
+                        // Verificar si hay obstáculos bloqueando el sonido para ajustar la oclusión
+                        if (Physics.Raycast(player.position, wall.ClosestPoint(player.position) - player.position, out hit, maxDistance, obstacleLayer))
+                        {
+                            // Aumentar el nivel de oclusión según la distancia
+                            occlusionLevel += Mathf.Clamp01(1 - (hit.distance / maxDistance));
+                        }
+                    }
+                }
+
+                // Escalar los valores de oclusión y reverb en función de la cantidad de obstáculos
+                occlusionLevel = Mathf.Clamp(occlusionLevel, 0, 1);
+                reverbLevel = Mathf.Clamp(reverbLevel, 0, 1);
+
+                // Normalizar los valores de oclusión y reverb
+                occlusionLevel = Mathf.Clamp(occlusionLevel, 0, 1);
+                reverbLevel = Mathf.Clamp(reverbLevel, 0, 1);
+
+                // Ajustar parámetros en FMOD
+                stepInstance.setParameterByName("Occlusion", occlusionLevel);
+                stepInstance.setParameterByName("Reverb", reverbLevel);
+
+                Debug.Log($"Calculated ReverbLevel: {reverbLevel}");
+                Debug.Log($"Calculated Occlusion: {occlusionLevel}");
             }
         }
     }

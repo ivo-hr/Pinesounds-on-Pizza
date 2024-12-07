@@ -160,7 +160,7 @@ MonoBehaviour:
     Path: event:/Footsteps
   player: {fileID: 289095558}
   groundCheck: {fileID: 1020848299}
-  maxDistance: 100
+  maxDistance: 60
   occlusionThreshold: 0.5
   occlusionIntensity: 0.5
   obstacleLayer:

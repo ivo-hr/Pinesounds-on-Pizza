@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Wood
   - Sand
+  - RockFloor
   layers:
   - Default
   - TransparentFX
