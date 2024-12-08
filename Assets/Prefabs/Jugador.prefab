@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 584840917077614158}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,9 +594,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 4
-  autoJump: 1
-  autoJumpStrength: 1
-  autoJumpDistance: 2
+  stepUp: 1
+  stepUpStrength: 1
+  stepUpDistance: 2
+  stepHeight: 0.5
+  stepCheckDistance: 0.5
   groundCheck: {fileID: 114503055206606986}
 --- !u!114 &4163431000619771304
 MonoBehaviour:
@@ -620,8 +622,10 @@ MonoBehaviour:
   player: {fileID: 4207293392497186}
   maxDistance: 100
   occlusionIntensity: 0.6
+  reverbIntensity: 60
   ambientVolumeReduction: 30
   stepDetector: {fileID: 584840917077614158}
+  reverbZone: 0
   currentArea: None
 --- !u!114 &584840917077614158
 MonoBehaviour:
@@ -646,7 +650,6 @@ MonoBehaviour:
   groundCheck: {fileID: 114503055206606986}
   maxDistance: 30
   reverbIntensity: 60
-  ambientVolumeReduction: 10
   stepVolume: 0.7
   currentTile: None
   applyReverb: 0

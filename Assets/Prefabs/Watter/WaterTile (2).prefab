@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4497971959163376072}
   m_Layer: 6
   m_Name: WaterTile (2)
-  m_TagString: Water
+  m_TagString: DeepWater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

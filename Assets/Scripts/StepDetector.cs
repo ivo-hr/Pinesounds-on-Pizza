@@ -13,7 +13,6 @@ public class StepDetector : MonoBehaviour
     
     public float maxDistance = 30f;
     public float reverbIntensity = 60f;
-    public float ambientVolumeReduction = 10f;
     public float stepVolume = 0.5f;
 
     private FMOD.Studio.EventInstance stepInstance;
@@ -86,6 +85,10 @@ public class StepDetector : MonoBehaviour
                     break;
 
                 case "Water":
+                    stepInstance.setParameterByName("Surface", 5);
+                    break;
+                
+                case "DeepWater":
                     stepInstance.setParameterByName("Surface", 5);
                     break;
 

@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 1148682066818756815}
   - component: {fileID: 8317233869622344689}
   - component: {fileID: 128705904689986719}
+  - component: {fileID: 2854867253412898317}
   m_Layer: 0
   m_Name: Colobus
   m_TagString: Untagged
@@ -696,6 +697,25 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &2854867253412898317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6182162820492919152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86f781f30a2110499e9d93f7bd84881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectEmitter: {fileID: 128705904689986719}
+  occlusionIntensity: 0.5
+  reverbIntensity: 60
+  targetListener: {fileID: 0}
+  occlusionLayers:
+    serializedVersion: 2
+    m_Bits: 65
 --- !u!1 &7853299950699460719
 GameObject:
   m_ObjectHideFlags: 0
