@@ -235,7 +235,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b445805f-f2c6-4b9d-a85a-d7cd7586e2cc}">
 		<property name="volume">
-			<value>-8</value>
+			<value>-14.5</value>
 		</property>
 		<property name="name">
 			<value>shoreline</value>
@@ -296,6 +296,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{85fca075-28be-4caa-b729-ff0538174b3d}">
+		<property name="volume">
+			<value>2.5</value>
+		</property>
 		<property name="name">
 			<value>grass</value>
 		</property>
@@ -373,7 +376,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d58dab70-e209-4c17-8b03-babb11a63d3f}">
 		<property name="volume">
-			<value>3.5</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>grassScatterer</value>
@@ -439,9 +442,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{59eb83d5-8d1b-4c63-82ff-82802d15487f}">
-		<property name="volume">
-			<value>-6</value>
-		</property>
 		<property name="name">
 			<value>wind</value>
 		</property>
@@ -511,7 +511,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{75fc7dd5-bb9d-4ebd-9abc-3c8a8f9ae630}">
 		<property name="volume">
-			<value>2</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>windScatterer</value>

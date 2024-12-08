@@ -621,9 +621,9 @@ MonoBehaviour:
     Path: event:/background
   player: {fileID: 4207293392497186}
   maxDistance: 100
-  occlusionIntensity: 0.6
-  reverbIntensity: 60
-  ambientVolumeReduction: 30
+  occlusionIntensity: 0.3
+  reverbIntensity: 75
+  ambientVolumeReduction: 20
   stepDetector: {fileID: 584840917077614158}
   reverbZone: 0
   currentArea: None

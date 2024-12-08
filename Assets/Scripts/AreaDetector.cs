@@ -111,7 +111,7 @@ public class AreaDetector : MonoBehaviour
             float distance = Vector3.Distance(player.position, area.Value.transform.position);
             //Set volume, Direction and Extent parameters
             areaInstance.setParameterByName(area.Key + "Volume", maxDistance - distance - ambientVolumeReduction);
-            areaInstance.setParameterByName(area.Key + "Direction", 180 + yawAngle(player.position, player.forward, area.Value.transform.position) + 180);
+            areaInstance.setParameterByName(area.Key + "Direction", (yawAngle(player.position, player.forward, area.Value.transform.position) + 180) % 360);
             areaInstance.setParameterByName(area.Key + "Distance", distance / 100);
             
             //Get the top center point of the tile

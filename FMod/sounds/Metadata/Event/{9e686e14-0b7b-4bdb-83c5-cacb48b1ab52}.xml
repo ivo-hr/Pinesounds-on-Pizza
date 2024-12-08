@@ -218,7 +218,7 @@
 	</object>
 	<object class="PlayPercentage" id="{666813df-c54c-49c7-9a39-7f10605de1f0}">
 		<property name="percentage">
-			<value>5</value>
+			<value>1</value>
 		</property>
 		<relationship name="sound">
 			<destination>{f8d8e65b-aeb9-43c1-bb61-91a3487c0d77}</destination>
