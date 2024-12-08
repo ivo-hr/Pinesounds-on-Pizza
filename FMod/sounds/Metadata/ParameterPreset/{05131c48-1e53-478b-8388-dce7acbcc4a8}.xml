@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{05131c48-1e53-478b-8388-dce7acbcc4a8}">
+		<property name="name">
+			<value>shorelineOcclusion</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{7f9f0603-61f7-4cd5-a39c-a22173231ec5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{7f9f0603-61f7-4cd5-a39c-a22173231ec5}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

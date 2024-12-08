@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8c372f06-f6d4-4a05-9a18-94b57111e076}">
+		<property name="name">
+			<value>windOcclusion</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cd1a8ec6-de99-416d-856c-4a4d0178809c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cd1a8ec6-de99-416d-856c-4a4d0178809c}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

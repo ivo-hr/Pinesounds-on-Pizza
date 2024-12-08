@@ -102,6 +102,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
+--- !u!114 &-4081617586984620019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/background/grassOcclusion
+  m_EditorClassIdentifier: 
+  Name: grassOcclusion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1610797332
+    data2: 2211727612
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3898822235127614078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +159,9 @@ MonoBehaviour:
   - {fileID: 6687092346955498005}
   - {fileID: -8030327396306044591}
   - {fileID: -3703016274226869249}
+  - {fileID: 1799575895856639082}
+  - {fileID: -4081617586984620019}
+  - {fileID: -1464177294236106377}
   MinDistance: 1
   MaxDistance: 20
   Length: 60081
@@ -210,6 +237,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1464177294236106377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/background/shorelineOcclusion
+  m_EditorClassIdentifier: 
+  Name: shorelineOcclusion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2153025715
+    data2: 3975639042
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1050166802910496839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +288,7 @@ MonoBehaviour:
   - {fileID: 2529413879655355680}
   - {fileID: 2178875426541318562}
   - {fileID: -6493579504968111488}
+  - {fileID: 1173207113092762354}
   MinDistance: 1
   MaxDistance: 20
   Length: 720
@@ -255,10 +307,10 @@ MonoBehaviour:
   Path: FMod/sounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638691965089012552
+  lastModified: 638692155335484040
   FileSizes:
   - Name: Desktop
-    Value: 1516
+    Value: 1674
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -286,7 +338,7 @@ MonoBehaviour:
   - {fileID: 4272176996252262988}
   StringsBanks:
   - {fileID: -516891035019255036}
-  cacheTime: 638691965089012552
+  cacheTime: 638692155335484040
   cacheVersion: 131621
 --- !u!114 &644675055631112088
 MonoBehaviour:
@@ -308,6 +360,54 @@ MonoBehaviour:
   ID:
     data1: 3869031499
     data2: 2926691011
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1173207113092762354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3231929889
+    data2: 3714610973
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1799575895856639082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/background/windOcclusion
+  m_EditorClassIdentifier: 
+  Name: windOcclusion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 914239643
+    data2: 2813205973
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -408,10 +508,10 @@ MonoBehaviour:
   Path: FMod/sounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638691965088921071
+  lastModified: 638692155335378233
   FileSizes:
   - Name: Desktop
-    Value: 2506752
+    Value: 2509920
   Exists: 1
 --- !u!114 &6231949383311390203
 MonoBehaviour:

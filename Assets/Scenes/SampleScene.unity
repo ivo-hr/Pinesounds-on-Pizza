@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -161,11 +161,11 @@ MonoBehaviour:
   player: {fileID: 289095558}
   groundCheck: {fileID: 1020848299}
   maxDistance: 100
-  occlusionThreshold: 0.5
-  occlusionIntensity: 0.5
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  occlusionThreshold: 0
+  occlusionIntensity: 0.9
+  ambientVolumeReduction: 50
+  stepVolume: 0.5
+  currentArea: None
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,8 +422,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20437472682476688, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20437472682476688, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: field of view
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 20437472682476688, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 20437472682476688, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 20437472682476688, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 81448068208000304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: m_Enabled

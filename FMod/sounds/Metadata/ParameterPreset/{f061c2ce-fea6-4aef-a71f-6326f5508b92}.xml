@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f061c2ce-fea6-4aef-a71f-6326f5508b92}">
+		<property name="name">
+			<value>grassOcclusion</value>
+		</property>
+		<relationship name="folder">
+			<destination>{079a8b70-c583-4a87-b53e-ed49d78f4fe3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ca0d71ab-e4dc-4fbd-a375-f42d7c408404}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ca0d71ab-e4dc-4fbd-a375-f42d7c408404}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
