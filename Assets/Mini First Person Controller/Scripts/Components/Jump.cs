@@ -4,9 +4,14 @@ public class Jump : MonoBehaviour
 {
     Rigidbody rigidbody;
     public float jumpStrength = 2;
-    public bool autoJump = true;
-    public float autoJumpStrength = 1;
-    public float autoJumpDistance = 2;
+    public bool stepUp = true;
+    public float stepUpStrength = 1;
+    public float stepUpDistance = 2;
+
+    
+    [SerializeField] private float stepHeight = 0.5f;
+    [SerializeField] private float stepCheckDistance = 0.5f;
+
     public event System.Action Jumped;
 
     [SerializeField, Tooltip("Prevents jumping when the transform is in mid-air.")]
@@ -47,28 +52,34 @@ public class Jump : MonoBehaviour
                 Jumped?.Invoke();
             }
         }
+
+        if (stepUp)
+        {
+            StepUp();
+        }
     }
 
 
-    void AutoJump()
+    void StepUp()
     {
-        // Si el jugador no está en el suelo y el salto automático está activado
-        if (!groundCheck.isGrounded && autoJump)
-        {
-            //Mandar dos rayos hacia delante para ver si hay un obstáculo
-            //Uno a la altura de los pies y otro desde el centro del jugador
-            RaycastHit feet;
-            RaycastHit center;
-            if (Physics.Raycast((transform.position - Vector3.down * 3), Vector3.forward, out feet, autoJumpDistance, terrainLayer) && 
-                !Physics.Raycast(transform.position, Vector3.forward, out center, autoJumpDistance, terrainLayer) &&
-                groundCheck && groundCheck.isGrounded)
-            {
-                // Si no hay obstáculo, saltar
-                rigidbody.AddForce(Vector3.up * 100 * autoJumpStrength);
-                Jumped?.Invoke();
+        if (!groundCheck.isGrounded) return;
 
+        RaycastHit lowerHit;
+        RaycastHit upperHit;
+
+        // Check for obstacles at the lower step height
+        Vector3 lowerOrigin = transform.position + Vector3.up * 0.1f; // Slightly above ground level
+        if (Physics.Raycast(lowerOrigin, transform.forward, out lowerHit, stepCheckDistance, terrainLayer))
+        {
+            // Check if there's space at the step height
+            Vector3 upperOrigin = transform.position + Vector3.up * stepHeight;
+            if (!Physics.Raycast(upperOrigin, transform.forward, out upperHit, stepCheckDistance, terrainLayer))
+            {
+                // No obstacle above the step; move the player up
+                transform.position += Vector3.up * stepHeight;
             }
         }
     }
+
 
 }
