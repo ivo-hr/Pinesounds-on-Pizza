@@ -95,7 +95,7 @@ public class AreaDetector : MonoBehaviour
                     break;
             }
 
-            currentArea = hit.collider.tag;
+            currentTile = hit.collider.tag;
         }
     }
 
