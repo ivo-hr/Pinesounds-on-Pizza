@@ -16,7 +16,8 @@ public class AreaDetector : MonoBehaviour
     public StepDetector stepDetector;
     
     //We must remember if the reverb is applied to the player, so not to remove it in the foreach loop
-    private bool reverbApplied = false;
+    //Left public in case not being used with the StepDetector script
+    public bool reverbZone = false;
 
 
     private FMOD.Studio.EventInstance areaInstance;
@@ -57,7 +58,13 @@ public class AreaDetector : MonoBehaviour
     {
         //Use the stepDetector script to get the current tile
         //Translate the current area to FMOD parameters
-        currentArea = AreaTranslate(stepDetector.currentTile);
+        try {
+            currentArea = AreaTranslate(stepDetector.currentTile);
+        }
+        catch (System.Exception)
+        {
+            Debug.LogWarning("if you are using the AreaDetector script without the StepDetector script, you must set the currentArea variable to the area you want to play the sound");
+        }
 
 
         //Detect the areas near the player
@@ -93,8 +100,9 @@ public class AreaDetector : MonoBehaviour
         }
 
 
-        //Set the reverbApplied to false to remove reverb if the player is not occluded
-        reverbApplied = false;
+        //Set the reverbZone to false to remove reverb if the player is not occluded
+        reverbZone = false;
+        
         //Check if the nearest area is occluded
         foreach (KeyValuePair<string, GameObject> area in nearestAreas)
         {
@@ -144,10 +152,10 @@ public class AreaDetector : MonoBehaviour
                     Debug.DrawRay(player.position + player.up * 1, ( pointAtPlayerHeight - (player.position + player.up * 1)).normalized * distanceToPlayerHeight, Color.red, 10f);
                 
                     //We can suppose the player is near the occluded area, so reverberation is applied to steps depending on the occlusion intensity
-                    if (!reverbApplied)
+                    if (!reverbZone && stepDetector != null)
                     {
                         stepDetector.applyReverb = true;
-                        reverbApplied = true;
+                        reverbZone = true;
                     }
                 
                 }
@@ -171,8 +179,8 @@ public class AreaDetector : MonoBehaviour
         areaInstance.setParameterByName(currentArea + "Distance", 0);
         areaInstance.setParameterByName(currentArea + "Occlusion", 0);
 
-        //Set the reverb to false if the player is not occluded (no reverberation)
-        if (!reverbApplied)
+        //Set the reverb to false if the player is not occluded (no reverberation) (if stepDetector is being used)
+        if (!reverbZone && stepDetector != null)
         {
             stepDetector.applyReverb = false;
         }

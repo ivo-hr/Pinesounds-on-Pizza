@@ -410,10 +410,6 @@ PrefabInstance:
       propertyPath: canRun
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 584840917077614158, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
-      propertyPath: stepVolume
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 3959843393412544119, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: m_Enabled
       value: 0
