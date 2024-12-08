@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 114963311885979670}
   - component: {fileID: 114497868231759342}
   - component: {fileID: 4163431000619771304}
+  - component: {fileID: 584840917077614158}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -616,6 +617,24 @@ MonoBehaviour:
       Data3: 170059184
       Data4: -195124865
     Path: event:/background
+  player: {fileID: 4207293392497186}
+  maxDistance: 100
+  occlusionIntensity: 0.6
+  ambientVolumeReduction: 30
+  stepDetector: {fileID: 584840917077614158}
+  currentArea: None
+--- !u!114 &584840917077614158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b30f02c56bbdc849a6ebff68ecc7db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   stepSound:
     Guid:
       Data1: 1731932443
@@ -625,12 +644,12 @@ MonoBehaviour:
     Path: event:/Footsteps
   player: {fileID: 4207293392497186}
   groundCheck: {fileID: 114503055206606986}
-  maxDistance: 100
-  occlusionThreshold: 0
-  occlusionIntensity: 0.4
-  ambientVolumeReduction: 50
-  stepVolume: 0.5
-  currentArea: None
+  maxDistance: 30
+  reverbIntensity: 60
+  ambientVolumeReduction: 10
+  stepVolume: 0.7
+  currentTile: None
+  applyReverb: 0
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0

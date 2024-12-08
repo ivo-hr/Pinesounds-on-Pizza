@@ -410,6 +410,10 @@ PrefabInstance:
       propertyPath: canRun
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 584840917077614158, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: stepVolume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3959843393412544119, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -419,8 +423,8 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4163431000619771304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
-      propertyPath: ambientVolumeReduction
-      value: 30
+      propertyPath: reverbIntensity
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
