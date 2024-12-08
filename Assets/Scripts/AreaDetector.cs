@@ -10,6 +10,7 @@ public class AreaDetector : MonoBehaviour
 
     public float maxDistance = 100f;
     public float occlusionIntensity = 0.5f;
+    public float reverbIntensity = 60f;
     public float ambientVolumeReduction = 10f;
 
     //Reference to the StepDetector script to activate reverb
@@ -79,7 +80,7 @@ public class AreaDetector : MonoBehaviour
 
 
 
-            if (areaCode != currentArea){
+            if (areaCode != currentArea && areaCode != "None"){
 
                 //Distance between player and area hit
                 float distance = Vector3.Distance(player.position, hit.gameObject.transform.position);
@@ -102,7 +103,7 @@ public class AreaDetector : MonoBehaviour
 
         //Set the reverbZone to false to remove reverb if the player is not occluded
         reverbZone = false;
-        
+
         //Check if the nearest area is occluded
         foreach (KeyValuePair<string, GameObject> area in nearestAreas)
         {
@@ -110,8 +111,8 @@ public class AreaDetector : MonoBehaviour
             float distance = Vector3.Distance(player.position, area.Value.transform.position);
             //Set volume, Direction and Extent parameters
             areaInstance.setParameterByName(area.Key + "Volume", maxDistance - distance - ambientVolumeReduction);
-            areaInstance.setParameterByName(area.Key + "Direction", yawAngle(player.position, area.Value.transform.position) + 180);
-            areaInstance.setParameterByName(area.Key + "Distance", distance * maxDistance / 10000);
+            areaInstance.setParameterByName(area.Key + "Direction", 180 + yawAngle(player.position, player.forward, area.Value.transform.position) + 180);
+            areaInstance.setParameterByName(area.Key + "Distance", distance / 100);
             
             //Get the top center point of the tile
             Vector3 topCenter = GetTopCenterPoint(area.Value);
@@ -156,7 +157,9 @@ public class AreaDetector : MonoBehaviour
                     {
                         stepDetector.applyReverb = true;
                         reverbZone = true;
+                        areaInstance.setParameterByName("Reverb", reverbIntensity);
                     }
+
                 
                 }
     
@@ -174,15 +177,18 @@ public class AreaDetector : MonoBehaviour
 
         //Play the current area sound were the player is
 
-        areaInstance.setParameterByName(currentArea + "Volume", 100 - ambientVolumeReduction);
-        areaInstance.setParameterByName(currentArea + "Direction", 0);
-        areaInstance.setParameterByName(currentArea + "Distance", 0);
-        areaInstance.setParameterByName(currentArea + "Occlusion", 0);
+        if (currentArea != "None"){
+            areaInstance.setParameterByName(currentArea + "Volume", 100 - ambientVolumeReduction);
+            areaInstance.setParameterByName(currentArea + "Direction", 0);
+            areaInstance.setParameterByName(currentArea + "Distance", 0);
+            areaInstance.setParameterByName(currentArea + "Occlusion", 0);
 
-        //Set the reverb to false if the player is not occluded (no reverberation) (if stepDetector is being used)
-        if (!reverbZone && stepDetector != null)
-        {
-            stepDetector.applyReverb = false;
+            //Set the reverb to false if the player is not occluded (no reverberation) (if stepDetector is being used)
+            if (!reverbZone && stepDetector != null)
+            {
+                stepDetector.applyReverb = false;
+                areaInstance.setParameterByName("Reverb", 0);
+            }
         }
 
 
@@ -209,10 +215,19 @@ public class AreaDetector : MonoBehaviour
     }
 
 
-    public static float yawAngle(Vector3 playerPos, Vector3 areaPos)
+    public static float yawAngle(Vector3 playerPos, Vector3 playerFwd, Vector3 sourcePosition)
     {
-        Vector3 direction = areaPos - playerPos;
-        return Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                // Calculate the vector from the player to the source
+        Vector3 toSource = sourcePosition - playerPos;
+
+        // Normalize the vectors
+        Vector3 playerForwardNormalized = playerFwd.normalized;
+        Vector3 toSourceNormalized = toSource.normalized;
+
+        // Calculate the angle between the vectors
+        float angle = Mathf.Acos(Vector3.Dot(playerForwardNormalized, toSourceNormalized)) * Mathf.Rad2Deg;
+
+        return angle;
     }
 
 

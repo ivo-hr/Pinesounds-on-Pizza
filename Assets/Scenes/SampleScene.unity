@@ -422,6 +422,14 @@ PrefabInstance:
       propertyPath: reverbIntensity
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 4163431000619771304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: occlusionIntensity
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163431000619771304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: ambientVolumeReduction
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects:
