@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 54063890643546284}
   - component: {fileID: 114963311885979670}
   - component: {fileID: 114497868231759342}
+  - component: {fileID: 4163431000619771304}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -592,7 +593,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 4
+  autoJump: 1
+  autoJumpStrength: 1
+  autoJumpDistance: 2
   groundCheck: {fileID: 114503055206606986}
+--- !u!114 &4163431000619771304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d469814c692a6da4aaa41166739047b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaSound:
+    Guid:
+      Data1: 524444130
+      Data2: 1217725897
+      Data3: 170059184
+      Data4: -195124865
+    Path: event:/background
+  stepSound:
+    Guid:
+      Data1: 1731932443
+      Data2: 1218722603
+      Data3: 481293965
+      Data4: -851095130
+    Path: event:/Footsteps
+  player: {fileID: 4207293392497186}
+  groundCheck: {fileID: 114503055206606986}
+  maxDistance: 100
+  occlusionThreshold: 0
+  occlusionIntensity: 0.4
+  ambientVolumeReduction: 50
+  stepVolume: 0.5
+  currentArea: None
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0
