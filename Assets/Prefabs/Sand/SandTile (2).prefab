@@ -128,4 +128,7 @@ MonoBehaviour:
   - assetName: 
     asset: {fileID: 3181916495347918271, guid: 169c38d25d3617641b3391b33e47259a, type: 3}
     probabilityToSpawn: 2
-  probabilityToSpawnNothing: 95
+  - assetName: 
+    asset: {fileID: 8786571711776754435, guid: 218f5c991db7375428562e22535052fd, type: 3}
+    probabilityToSpawn: 1
+  probabilityToSpawnNothing: 94
