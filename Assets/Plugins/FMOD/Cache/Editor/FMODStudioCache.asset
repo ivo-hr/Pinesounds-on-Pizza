@@ -292,6 +292,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 720
+--- !u!114 &-927831201797195771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/rat
+  m_EditorClassIdentifier: 
+  Path: event:/rat
+  Guid:
+    Data1: 505521295
+    Data2: 1268173234
+    Data3: -1043124858
+    Data4: -1849934503
+  Banks:
+  - {fileID: 4272176996252262988}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &-516891035019255036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,10 +334,10 @@ MonoBehaviour:
   Path: FMod/sounds/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638692612896493885
+  lastModified: 638692745358028212
   FileSizes:
   - Name: Desktop
-    Value: 1674
+    Value: 1754
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -333,12 +360,14 @@ MonoBehaviour:
   - {fileID: -5608244878090297995}
   - {fileID: 2850396637428234966}
   - {fileID: -3898822235127614078}
+  - {fileID: -927831201797195771}
+  - {fileID: 2505124870944577614}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4272176996252262988}
   StringsBanks:
   - {fileID: -516891035019255036}
-  cacheTime: 638692612896493885
+  cacheTime: 638692745358028212
   cacheVersion: 131621
 --- !u!114 &644675055631112088
 MonoBehaviour:
@@ -442,6 +471,33 @@ MonoBehaviour:
   - sand
   - water
   Exists: 1
+--- !u!114 &2505124870944577614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bird
+  m_EditorClassIdentifier: 
+  Path: event:/bird
+  Guid:
+    Data1: -384817964
+    Data2: 1302635011
+    Data3: 1244317334
+    Data4: -7515506
+  Banks:
+  - {fileID: 4272176996252262988}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &2529413879655355680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,10 +564,10 @@ MonoBehaviour:
   Path: FMod/sounds/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638692612896403454
+  lastModified: 638692745357957876
   FileSizes:
   - Name: Desktop
-    Value: 2818432
+    Value: 3276448
   Exists: 1
 --- !u!114 &6231949383311390203
 MonoBehaviour:

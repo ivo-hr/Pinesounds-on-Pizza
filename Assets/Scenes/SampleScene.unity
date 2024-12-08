@@ -416,7 +416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4163431000619771304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
       propertyPath: stepVolume
-      value: 0.5
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163431000619771304, guid: 6f7113dbc81b8bf4e87ce7b795088e69, type: 3}
+      propertyPath: ambientVolumeReduction
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

@@ -14,6 +14,7 @@ public class AreaDetector : MonoBehaviour
     public float maxDistance = 100f;
     public float occlusionThreshold = 0.5f;
     public float occlusionIntensity = 0.5f;
+    public float reverbIntensity = 60f;
     public float ambientVolumeReduction = 10f;
     public float stepVolume = 0.5f;
 
@@ -24,6 +25,9 @@ public class AreaDetector : MonoBehaviour
     private string currentTile = "None";
     [SerializeField]
     private string currentArea = "None";
+
+    //We must remember if the reverb is applied to the player, so not to remove it in the foreach loop
+    private bool reverbApplied = false;
 
     int terrainLayer;
     FMOD.ATTRIBUTES_3D attributes;
@@ -61,6 +65,9 @@ public class AreaDetector : MonoBehaviour
     // Cast a ray to the floor to see on what terrain the player is standing
     void FloorDetector()
     {
+        //Set the reverb bool to false, were going to check if the player is occluded by the terrain
+        reverbApplied = false;
+
         RaycastHit hit;
         if (Physics.Raycast(player.position, UnityEngine.Vector3.down, out hit, maxDistance, terrainLayer))
         {
@@ -145,7 +152,7 @@ public class AreaDetector : MonoBehaviour
 
 
 
-            if (areaCode != currentTile){
+            if (areaCode != currentArea){
 
                 //Distance between player and area hit
                 float distance = UnityEngine.Vector3.Distance(player.position, hit.gameObject.transform.position);
@@ -214,6 +221,14 @@ public class AreaDetector : MonoBehaviour
 
                     Debug.Log("Occluded " + area.Key + " by " + rayHitArea);   
                     Debug.DrawRay(player.position + player.up * 1, ( pointAtPlayerHeight - (player.position + player.up * 1)).normalized * distanceToPlayerHeight, Color.red, 10f);
+                
+                    //We can suppose the player is near the occluded area, so reverberation is applied to steps depending on the occlusion intensity
+                    if (!reverbApplied)
+                    {
+                        stepInstance.setParameterByName("Reverb", reverbIntensity);
+                        reverbApplied = true;
+                    }
+                
                 }
     
                 
@@ -234,6 +249,12 @@ public class AreaDetector : MonoBehaviour
         areaInstance.setParameterByName(currentArea + "Direction", 0);
         areaInstance.setParameterByName(currentArea + "Distance", 0);
         areaInstance.setParameterByName(currentArea + "Occlusion", 0);
+
+        //If no reverberation is applied, set the reverb parameter to 0
+        if (!reverbApplied)
+        {
+            stepInstance.setParameterByName("Reverb", 0);
+        }
 
 
         areaInstance.set3DAttributes(attributes);

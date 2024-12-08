@@ -113,6 +113,9 @@
 		<property name="maximumScatterDistance">
 			<value>0</value>
 		</property>
+		<property name="pitchRandomization">
+			<value>1.39999998</value>
+		</property>
 		<relationship name="sound">
 			<destination>{ee5bb789-bb78-4a08-b0f7-ff1bc1e0a3df}</destination>
 		</relationship>
@@ -148,7 +151,6 @@
 	<object class="MixerBusEffectChain" id="{8d6085c7-087e-41aa-bacb-88f37bfa9573}">
 		<relationship name="effects">
 			<destination>{4de8b3e4-fb8f-49b3-b363-27618904d002}</destination>
-			<destination>{cec49ec9-db1a-4e27-b391-c69e3bd8a10d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{583edb84-9894-4e0b-8172-b644d808ceea}" />
@@ -169,11 +171,11 @@
 	<object class="MixerBusEffectChain" id="{82b7d4f3-5c07-4e3c-acbe-f61da12e3812}">
 		<relationship name="effects">
 			<destination>{e2e1c773-79c1-433f-949a-c8c45d92e7c5}</destination>
+			<destination>{f6c8fb0a-bc52-4f96-8ed6-cbab52635922}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0f3606a2-a9c8-4f5f-b719-d87789a66313}" />
 	<object class="MixerBusFader" id="{4de8b3e4-fb8f-49b3-b363-27618904d002}" />
-	<object class="SpatialiserEffect" id="{cec49ec9-db1a-4e27-b391-c69e3bd8a10d}" />
 	<object class="SingleSound" id="{813c2f01-4478-44e3-89ca-a78df7b63f5b}">
 		<relationship name="audioFile">
 			<destination>{97c312b2-ba34-4ee5-b90e-4b0de197ae1b}</destination>
@@ -206,11 +208,12 @@
 	</object>
 	<object class="PlayPercentage" id="{666813df-c54c-49c7-9a39-7f10605de1f0}">
 		<property name="percentage">
-			<value>0.5</value>
+			<value>5</value>
 		</property>
 		<relationship name="sound">
 			<destination>{f8d8e65b-aeb9-43c1-bb61-91a3487c0d77}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{e2e1c773-79c1-433f-949a-c8c45d92e7c5}" />
+	<object class="SpatialiserEffect" id="{f6c8fb0a-bc52-4f96-8ed6-cbab52635922}" />
 </objects>
