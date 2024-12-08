@@ -223,6 +223,7 @@ public class AreaDetector : MonoBehaviour
             {
                 Debug.DrawRay(player.position + player.up * 1, ( pointAtPlayerHeight - (player.position + player.up * 1)).normalized * distanceToPlayerHeight, Color.green, 10f);
                 areaInstance.setParameterByName(area.Key + "Occlusion", 0);
+                Debug.Log("Not Occluded " + area.Key);
             }
 
         }
