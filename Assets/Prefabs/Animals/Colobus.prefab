@@ -624,11 +624,11 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0, y: 0.3992514, z: -0.044929445}
   m_Size: 1.2387309
-  m_FadeMode: 0
+  m_FadeMode: 1
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.95
+  - screenRelativeHeight: 0.95791686
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5656757442522119580}
@@ -636,11 +636,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4990372448307651915}
-  - screenRelativeHeight: 0.35
+  - screenRelativeHeight: 0.29555276
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4489511534093283919}
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2440281965448769000}
@@ -712,6 +712,7 @@ MonoBehaviour:
   objectEmitter: {fileID: 128705904689986719}
   occlusionIntensity: 0.5
   reverbIntensity: 60
+  maxDistance: 100
   targetListener: {fileID: 0}
   occlusionLayers:
     serializedVersion: 2
